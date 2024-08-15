@@ -1,0 +1,18 @@
+{/* <div className="text-center space-y-4 lg:max-w-[430px] mx-auto">
+                    <h1 className="text-4xl font-bold !leading-snug">
+                        450k+ Students are learning from us
+                    </h1>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Consequatur eligendi itaque ipsum recusandae iusto totam 
+                        ratione temporibus, consectetur qui dolore aperiam facere 
+                        facilis doloremque? Temporibus delectus, magnam numquam 
+                        ab corporis beatae neque ipsa et voluptate ad fugiat facere minus, odio esse? Ab explicabo atque amet rerum iure!
+                    </p>
+
+                    <a href="" className="primary-btn !mt-8 inline-flex items-center gap-4 group">
+                        Subscribe Now
+                        <FaBell  className="duration-200 group-hover:animate-bounce group-hover:text-lg"/>
+                    </a>
+                </div> */}
