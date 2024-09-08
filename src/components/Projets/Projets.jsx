@@ -19,7 +19,7 @@ const Subscribe = () => {
     // };
     
   return (
-    <section className="bg-[#f7f7f7]">
+    <section className="">
         <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{opacity : 1}}

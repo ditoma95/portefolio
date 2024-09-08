@@ -1,5 +1,3 @@
-// import { IoIosArrowRoundForward } from "react-icons/io";
-import Navbar from "../Navbar/Navbar";
 import {motion } from "framer-motion";
 import Typed from 'typed.js';
 import { useEffect } from "react";
@@ -31,8 +29,7 @@ const Hero = () => {
 
 
   return (
-    <section className="relative overflow-hidden bg-light">
-      <Navbar/>
+    <section className="relative z-0 overflow-hidden ">
       <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[60px]">
         {/* Brand info */}
         <div className="relative z-20 flex flex-col justify-center py-14 md:py-0">
@@ -44,26 +41,17 @@ const Hero = () => {
 
              className="text-3xl lg:text-4xl font-bold !leading-snug">
               
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 text-[#AFBFD9]">
                 <h1>Je </h1>
-                <h1 className="text-red-600">suis </h1>
-                <h1 className="text-green-600">Ditoma</h1>
+                <h1 className="">suis </h1>
+                <h1 className="">Ditoma</h1>
                 <h1> {" :  "}</h1>
               </div>
                
-              <span className="italic text-yellow-700 element"></span> 
+              <span className="italic text-[#AFBFD9] element"></span> 
               
               
             </motion.h1>
-            {/* <motion.div
-            variants={FadUp(0.8)}
-            initial="initial"
-            animate="animate"
-             className="flex justify-center">
-              <button className="flex items-center gap-2 primary-btn">Get Started
-                <IoIosArrowRoundForward className="text-xl duration-300 group-hover:translate-x-2 group:hover:-rotate-45"/>
-              </button>
-            </motion.div> */}
           </div>
         </div>
 
