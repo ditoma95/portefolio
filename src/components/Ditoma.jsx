@@ -5,65 +5,95 @@ import Hero from "./Hero/Hero";
 import Projets from "./Projets/Projets";
 import Skill from "./Skills/Skill";
 import Footer from "./Footer/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const Ditoma = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Fonction pour basculer la visibilité du menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDarkMode]);
+
   return (
-    <div>
-      <div className="mb-20 bg-[#70372C]">
-        <nav className="fixed top-0 left-0 right-0 z-20 bg-[#70372C]">
+    <div className={isDarkMode ? "dark bg-gray-900" : "bg-white"}>
+      <div className="mb-20 bg-[#70372C] dark:bg-gray-800">
+        <nav className="fixed top-0 left-0 right-0 z-20 bg-[#70372C] dark:bg-gray-800">
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            className="container flex items-center justify-between py-5 bg-[#70372C]"
+            className="container flex items-center justify-between py-5"
           >
             {/* Logo section */}
             <div>
-              <h1 className="text-2xl font-bold text-[#F0BFDB]">Ditoma</h1>
+              <h1 className="text-2xl font-bold text-[#F0BFDB] dark:text-white">Ditoma</h1>
             </div>
 
             {/* Menu section (Desktop) */}
-            <div className="hidden lg:block">
+            <div className="items-center hidden gap-6 lg:flex">
               <ul className="flex items-center gap-3">
-                <li className="relative inline-block hover:text-[#AFBFD9] group text-[#F0BFDB]">
+                <li className="relative inline-block hover:text-[#AFBFD9] group text-[#F0BFDB] dark:text-white">
                   <NavLink to={'/'}>Accueil</NavLink>
                 </li>
-                <li className="relative inline-block hover:text-[#AFBFD9] group text-[#F0BFDB]">
+                <li className="relative inline-block hover:text-[#AFBFD9] group text-[#F0BFDB] dark:text-white">
                   <NavLink to={'/cv'}>CV</NavLink>
                 </li>
-                <li className="relative inline-block hover:text-[#AFBFD9] group text-[#F0BFDB]">
+                <li className="relative inline-block hover:text-[#AFBFD9] group text-[#F0BFDB] dark:text-white">
                   <NavLink to={'/acceuil'}>Contact</NavLink>
                 </li>
               </ul>
+
+              
+              <button onClick={toggleTheme}>
+                {isDarkMode ? (
+                  <FaSun className="text-2xl text-yellow-400" />
+                ) : (
+                  <FaMoon className="text-2xl text-blue-400" />
+                )}
+              </button>
             </div>
 
             {/* Mobile Hamburger menu section */}
-            <div className="lg:hidden">
+            <div className="flex items-center lg:hidden">
               <IoMdMenu
-                className="text-4xl text-[#F0BFDB] hover:text-blue-600 hover:shadow-2xl hover:scale-100 cursor-pointer"
-                onClick={toggleMenu} 
+                className="text-4xl text-[#F0BFDB] dark:text-white cursor-pointer"
+                onClick={toggleMenu}
               />
+              {/* Bouton mobile pour basculer le thème */}
+              <button
+                onClick={toggleTheme}
+                className="px-2 py-1 ml-4 text-sm text-gray-800 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-100"
+              >
+                {isDarkMode ? "Light" : "Dark"}
+              </button>
             </div>
           </motion.div>
 
           {/* Menu (Mobile) */}
           {isMenuOpen && (
-            <div className="bg-[#70372C] lg:hidden">
+            <div className="bg-[#70372C] dark:bg-gray-800 lg:hidden">
               <ul className="px-6">
-                <li className="hover:text-[#AFBFD9] hover:bg-slate-600 hover:p-2 rounded-2xl hover:cursor-pointer transition-all group py-1 text-[#F0BFDB]">
+                <li className="hover:text-[#AFBFD9] hover:bg-slate-600 hover:p-2 rounded-2xl hover:cursor-pointer transition-all group py-1 text-[#F0BFDB] dark:text-white">
                   <NavLink to={'/'} onClick={() => setIsMenuOpen(false)}>Accueil</NavLink>
                 </li>
-                <li className="hover:text-[#AFBFD9] hover:bg-slate-600 hover:p-2 rounded-2xl hover:cursor-pointer transition-all group py-1 text-[#F0BFDB]">
+                <li className="hover:text-[#AFBFD9] hover:bg-slate-600 hover:p-2 rounded-2xl hover:cursor-pointer transition-all group py-1 text-[#F0BFDB] dark:text-white">
                   <NavLink to={'/cv'} onClick={() => setIsMenuOpen(false)}>CV</NavLink>
                 </li>
-                <li className="hover:text-[#AFBFD9] hover:bg-slate-600 hover:p-2 rounded-2xl hover:cursor-pointer transition-all group py-1 text-[#F0BFDB]">
+                <li className="hover:text-[#AFBFD9] hover:bg-slate-600 hover:p-2 rounded-2xl hover:cursor-pointer transition-all group py-1 text-[#F0BFDB] dark:text-white">
                   <NavLink to={'/acceuil'} onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
                 </li>
               </ul>
