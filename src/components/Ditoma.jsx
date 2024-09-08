@@ -68,17 +68,18 @@ const Ditoma = () => {
             </div>
 
             {/* Mobile Hamburger menu section */}
-            <div className="flex items-center lg:hidden">
+            <div className="flex items-center gap-6 lg:hidden">
               <IoMdMenu
                 className="text-4xl text-[#F0BFDB] dark:text-white cursor-pointer"
                 onClick={toggleMenu}
               />
               {/* Bouton mobile pour basculer le thème */}
-              <button
-                onClick={toggleTheme}
-                className="px-2 py-1 ml-4 text-sm text-gray-800 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-100"
-              >
-                {isDarkMode ? "Light" : "Dark"}
+              <button onClick={toggleTheme}>
+                {isDarkMode ? (
+                  <FaSun className="text-2xl text-yellow-400" />
+                ) : (
+                  <FaMoon className="text-2xl text-blue-400" />
+                )}
               </button>
             </div>
           </motion.div>
