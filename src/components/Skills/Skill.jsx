@@ -3,10 +3,10 @@ import { FadUp } from "../Hero/Hero";
 
 // Liste des compétences
 const skills = [
-  "PHP", "Python", "Dart", "JavaScript", "HTML", "CSS",
-  "React.js", "TailwindCSS", "SQL", "Laravel", "Django",
+  "PHP", "Python", "Dart", "Js", "HTML", "CSS",
+  "React. js", "Tailwind CSS", "SQL", "Laravel", "Django",
   "Flutter", "Git", "GitHub", "Linux", "Bash",
-  "Photoshop", "Illustrator"
+  "Socket. io", "Adobe PS", "Adobe Ai", "Créateur contenu youtube"
 ];
 
 const SkillCard = ({ skill }) => (
@@ -15,9 +15,9 @@ const SkillCard = ({ skill }) => (
     initial="initial"
     whileInView="animate"
     viewport={{ once: true }}
-    className="flex items-center gap-4 p-4 sm:p-6 bg-[#f4f4f4] rounded-2xl hover:bg-white duration-300 hover:shadow-2xl"
+    className="flex items-center gap-4 p-4 text-[20px] bg-[#f4f4f4] rounded-2xl hover:bg-white duration-300 hover:shadow-2xl"
   >
-    <p className="text-base font-bold sm:text-lg">{skill}</p>
+    <p className="text-base font-bold sm:text-md">{skill}</p>
   </motion.div>
 );
 
